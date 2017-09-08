@@ -23,6 +23,15 @@ class App extends React.Component {
       videos: this.props.videos,
       selected: this.props.videos[0]
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick(video) {
+    this.setState(
+      {selected: video}
+    );
+    // console.log('here');
+    // console.log(video);
   }
   
   render() {
@@ -35,10 +44,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.props.videos[0]}/>
+            <VideoPlayer video={this.state.selected}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.props.videos}/>
+            <VideoList videos={this.props.videos} select={this.handleClick}/>
           </div>
         </div>
       </div>
