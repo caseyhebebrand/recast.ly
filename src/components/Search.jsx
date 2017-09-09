@@ -15,6 +15,8 @@ class Search extends React.Component {
     this.state = {
       string: ""
     };
+    
+    this.debounceFunc = _.debounce(this.debounceSearch, 500);
   }
   
   searchClick() {
@@ -32,6 +34,11 @@ class Search extends React.Component {
     if (event.keyCode === 13) {
       this.props.searcher(this.state.string);
     }
+    this.debounceFunc();
+  }
+  
+  debounceSearch() {
+    this.props.searcher(this.state.string);    
   }
 
   render() {

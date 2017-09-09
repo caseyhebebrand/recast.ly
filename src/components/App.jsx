@@ -77,10 +77,10 @@ class App extends React.Component {
           </nav>
           <div className="row">
             <div className="col-md-7">
-              VideoPlayer
+              <div className="video-player"></div>
             </div>
             <div className="col-md-5">
-              VideoList
+              <div className="video-list"></div>
             </div>
           </div>
         </div>
