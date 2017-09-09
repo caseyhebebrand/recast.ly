@@ -24,6 +24,7 @@ class App extends React.Component {
       selected: {}
     };
     this.handleClick = this.handleClick.bind(this);
+    this.searchVideos = this.searchVideos.bind(this);
   }
   //componentDidMount
     //do an initial search 
@@ -89,7 +90,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <Search searcher={this.searchVideos}/>
           </div>
         </nav>
         <div className="row">
