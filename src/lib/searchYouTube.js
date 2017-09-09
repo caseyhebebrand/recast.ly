@@ -12,8 +12,17 @@ var searchYouTube = (options, callback) => {
     },
     contentType: 'application/json',
     success: (data) => {
-      console.log('success', data);
+      console.log('success', data.items);
       callback(data.items);
+      // var setVideos = (videos) => {
+      //   console.log('ready to reset state');
+      //   console.log(videos);
+      //   this.setState(
+      //     {'videos': videos,
+      //       'selected': videos[0]
+      //     });
+      //   console.log(this.state);
+      // };
     },
     error: (e) => {
       console.log('error', e);
